@@ -2,7 +2,8 @@
 
     ﻿using System;
     using System.Security.Cryptography.X509Certificates;
-    using DesignPattern.Observer;
+using DesignPattern.Factory;
+using DesignPattern.Observer;
     using DesignPattern.Stategy;
     namespace DesignPattern;
 
@@ -12,7 +13,7 @@
         {
 
         Program program = new Program();
-        program.DesignPatternObserver();
+        program.DesignPatternFactory();
 
 
     }
@@ -67,4 +68,19 @@
 
              abonne1.Sinformer(journaliste);
     }
+
+    public void DesignPatternFactory()
+    {
+        Console.WriteLine("Choisissez le type de paiement : 1. Carte 2. Mobile Money 3. Cash");
+        string choice = Console.ReadLine();
+        try
+        {
+            IPayement payement = PayementFactory.GetPayement(choice);
+            payement.Payer();
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }   
 }

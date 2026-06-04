@@ -14,11 +14,11 @@ namespace DesignPattern.Factory
         {
             switch (type.ToLower())
             {
-                case "carte":
+                case "1":
                     return new PayementParCarte();
-                case "mobilemoney":
+                case "2":
                     return new PayementParMobilMoney();
-                case "cash":
+                case "3":
                     return new PayementCash();
                 default:
                     throw new ArgumentException("Type de paiement non supporté.");
