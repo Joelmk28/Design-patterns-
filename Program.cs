@@ -1,10 +1,10 @@
 ﻿//Considerons ce code comme application client de notre pattern Strategy, nous allons créer une classe Document qui utilise une instance de IOperation pour enregistrer le document dans le format souhaité.
 
     ﻿using System;
-using System.Security.Cryptography.X509Certificates;
-using DesignPattern.Observer;
-using DesignPattern.Stategy;
-namespace DesignPattern;
+    using System.Security.Cryptography.X509Certificates;
+    using DesignPattern.Observer;
+    using DesignPattern.Stategy;
+    namespace DesignPattern;
 
     class Program
     {
@@ -57,14 +57,14 @@ namespace DesignPattern;
 
         public void DesignPatternObserver()
         {
-            Journal1 journaliste = new Journal1();
-            Abonne1 abonne1 = new Abonne1();
+             Journal1 journaliste = new Journal1();
+             Abonne1 abonne1 = new Abonne1();
            
-            journaliste.Abonner (abonne1);
+             journaliste.Abonner (abonne1);
         
              journaliste.State = 3;
              journaliste.notifierLesAbonnees();
 
-        abonne1.Sinformer(journaliste);
+             abonne1.Sinformer(journaliste);
     }
 }
