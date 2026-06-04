@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPattern.Factory
 {
-    public class PayementParMobilMoney
+    public class PayementParMobilMoney : IPayement
     {
             public void Payer()
             {
