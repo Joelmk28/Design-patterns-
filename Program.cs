@@ -2,6 +2,7 @@
 
     ﻿using System;
     using System.Security.Cryptography.X509Certificates;
+using DesignPattern.Builder;
 using DesignPattern.Factory;
 using DesignPattern.Observer;
     using DesignPattern.Stategy;
@@ -69,7 +70,7 @@ using DesignPattern.Observer;
              abonne1.Sinformer(journaliste);
     }
 
-    public void DesignPatternFactory()
+        public void DesignPatternFactory()
     {
         Console.WriteLine("Choisissez le type de paiement : 1. Carte 2. Mobile Money 3. Cash");
         string choice = Console.ReadLine();
@@ -82,5 +83,33 @@ using DesignPattern.Observer;
         {
             Console.WriteLine(ex.Message);
         }
-    }   
+    }
+
+    public void DesignPatternBuilder()
+    {
+        //"Methode classique pour creer un objet 
+        Utilisateur utilisateur = new Utilisateur()
+        {
+           Nom =  "Muhindo",
+           Prenom = "Joel",
+            Email = "joelmuhindok@gmail.com"
+        };
+
+        //Methode avec Builder
+
+        var utilisateur2 = Utilisateur.builder()
+            .Email(utilisateur.Email)
+            .Nom(utilisateur.Nom)
+            .Prenom(utilisateur.Prenom)
+            .Build();
+
+
+       
+            
+            
+
+
+
+
+    }
 }
