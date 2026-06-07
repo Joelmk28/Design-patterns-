@@ -22,7 +22,7 @@ namespace DesignPattern.Mediator
 
         private void ReceiveMessage(string message)
         {
-           Console.WriteLine("Message recu : "+ message + " de ma la part de " +Name);
+           Console.WriteLine(Name + " Vous avez un nouveau message : "+ message);
         }
     }
 }

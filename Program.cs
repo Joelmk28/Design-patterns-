@@ -4,6 +4,7 @@
     using System.Security.Cryptography.X509Certificates;
 using DesignPattern.Builder;
 using DesignPattern.Factory;
+using DesignPattern.Mediator;
 using DesignPattern.Observer;
     using DesignPattern.Stategy;
     namespace DesignPattern;
@@ -14,7 +15,7 @@ using DesignPattern.Observer;
         {
 
         Program program = new Program();
-        program.DesignPatternFactory();
+        program.DesignPatternMediator();
 
 
     }
@@ -111,5 +112,12 @@ using DesignPattern.Observer;
 
 
 
+    }
+
+    public void DesignPatternMediator()
+    {
+        var joel = new User("Joel");
+        var Noemie = new User("Noemie");
+        joel.sendMessage("Je t'aime",Noemie);
     }
 }
