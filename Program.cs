@@ -2,6 +2,7 @@
 
     ﻿using System;
     using System.Security.Cryptography.X509Certificates;
+using DesignPattern.Bridge;
 using DesignPattern.Builder;
 using DesignPattern.Factory;
 using DesignPattern.Mediator;
@@ -15,7 +16,7 @@ using DesignPattern.Observer;
         {
 
         Program program = new Program();
-        program.DesignPatternMediator();
+        program.DesignPatternBridge();
 
 
     }
@@ -119,5 +120,17 @@ using DesignPattern.Observer;
         var joel = new User("Joel");
         var Noemie = new User("Noemie");
         joel.sendMessage("Je t'aime",Noemie);
+    }
+
+    public void DesignPatternBridge()
+    {
+        IMessageSender emailSender = new EmailSender();
+        IMessageSender smsSender = new SmsSender();
+        Notification normalNotification = new NormalNotification(emailSender);
+        normalNotification.Notify("Ceci est une notification normale par email.");
+        Notification urgentNotification = new UrgentNotification(smsSender);
+        urgentNotification.Notify("Ceci est une notification urgente par SMS.");
+
+     
     }
 }
